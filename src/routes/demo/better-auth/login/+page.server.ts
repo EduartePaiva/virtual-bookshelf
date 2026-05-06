@@ -21,7 +21,7 @@ export const actions: Actions = {
 				provider: provider as 'github',
 				callbackURL
 			}
-		});
+		}).catch((e) => { console.error(e); throw e });
 
 		if (result.url) {
 			return redirect(302, result.url);
