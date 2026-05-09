@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import type { PageServerData } from './$types';
+	import type { LayoutServerData } from './$types';
 	import { Button } from '$lib/components/ui/button/index.js';
 
-	let { data }: { data: PageServerData } = $props();
+	let { data }: { data: LayoutServerData } = $props();
 </script>
 
 <h1>Welcome to SvelteKit</h1>
