@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { LayoutServerData } from './$types';
 	import type { Snippet } from 'svelte';
+	import Header from '$lib/components/header.svelte';
 
 	interface Props {
 		data: LayoutServerData;
@@ -12,10 +13,6 @@
 	$inspect(data);
 </script>
 
-<nav>
-	<a href="/">Home</a>
-	<a href="/about">About</a>
-	<a href="/settings">Settings</a>
-</nav>
+<Header user={data.user} />
 
 {@render children()}
