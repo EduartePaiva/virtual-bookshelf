@@ -3,7 +3,7 @@
 - [x] have login setup, (gh oauth)
 - [x] access app only after login.
 - [x] add a component library (shadcn svelte)
-- [ ] build the user navbar
+- [x] build the user navbar
 - [ ] Be able to search books from the open library api, https://openlibrary.org/search.json?q=harry+potter
     - [ ] Implement a search bar, with debouncing
     - [ ] the search should show the cape, name, author, date
