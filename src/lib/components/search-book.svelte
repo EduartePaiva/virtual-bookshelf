@@ -2,23 +2,29 @@
 	import { Input } from '$lib/components/ui/input/index.js';
 
 	let query = $state('');
-	let debouncedQuery = $state('');
+	const fetchSearchData = (q: string) => {
+		const url = new URL('https://openlibrary.org/search.json');
+		url.searchParams.append('q', q);
+		fetch(url)
+			.then((res) => {
+				return res.json();
+			})
+			.then(console.log);
+	};
 
 	$effect(() => {
-		console.log('rodou');
 		if (query.trim().length < 3) {
-			debouncedQuery = '';
 			return;
 		}
 
-		const id = setInterval(() => {
-			debouncedQuery = query;
+		const id = setTimeout(() => {
+			fetchSearchData(query);
 		}, 500);
 
-		return () => clearInterval(id);
+		return () => clearTimeout(id);
 	});
 </script>
 
 <Input type="text" bind:value={query} placeholder="Search a book" class="max-w-xs" />
 
-<p>{debouncedQuery}</p>
+<p>{query}</p>
