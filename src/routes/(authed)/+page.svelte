@@ -12,5 +12,6 @@
 <form method="post" action="?/signOut" use:enhance>
 	<Button type="submit" variant="outline">Sign out</Button>
 </form>
-
-<SearchBook />
+<div class="flex justify-center">
+	<SearchBook />
+</div>
